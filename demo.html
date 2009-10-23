@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>jQuery Doubleselect Plugin</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="jquery.doubleSelect.min.js"></script>
+		<script type="text/JavaScript">
+ $(document).ready(function()
+ {
+	    var selectoptions = {
+    		"Vegetables": {
+    	         "key" : 10,
+                 "defaultvalue" : 111,
+    	         "values" : {
+                     "tomato": 110,
+                     "potato": 111,
+                     "asparagus": 112
+                     }
+              },
+            "Fruits": {
+                 "key" : 20,
+                 "defaultvalue" : 212,
+                 "values" : {
+                     "apple": 210,
+                     "orange": 211,
+                     "kiwi": 212,
+                     "melon": 213
+                     }
+              }
+    };
+
+	    $('#first').doubleSelect('second', selectoptions);      
+ });
+        </script>
+	</head>
+	<body>
+		<div id="main">
+			<h1>
+				jQuery Doubleselect Plugin
+			</h1>
+			<p>
+				Fill in a second select box dependent on the first one.
+			</p>
+			<p>
+				Version : 1.1
+				<br />
+				Written by :
+				<a href="http://www.jgeppert.com">Johannes Geppert</a>
+				<br/>
+				Download : <a href="jquery.doubleSelect.zip">jquery.doubleSelect.zip</a>
+			</p>
+
+			<h2>
+				Example :
+			</h2>
+			<form action="index.html"> 
+				<fieldset>
+					<legend>
+						DoubleSelect Demo
+					</legend>
+					<div>
+						<label for="first">
+							First Select Box :
+						</label>
+						<select id="first" name="first" size="1"><option value="">--</option></select>
+					</div>
+					<div>
+						<label for="second">
+							Second Select Box :
+						</label>
+						<select id="second" name="second" size="1"><option value="">--</option></select>
+					</div>
+				</fieldset>
+			</form>
+
+			<h2>
+				Code
+			</h2>
+			<pre>
+ $(document).ready(function()
+ {
+    	    "Vegetables": {
+    	         "key" : 10,
+                 "defaultvalue" : 111,
+    	         "values" : {
+                     "tomato": 110,
+                     "potato": 111,
+                     "asparagus": 112
+                     }
+              },
+            "Fruits": {
+                 "key" : 20,
+                 "defaultvalue" : 212,
+                 "values" : {
+                     "apple": 210,
+                     "orange": 211,
+                     "kiwi": 212,
+                     "melon": 213
+                     }
+              }
+    };
+    $('#first').doubleSelect('second', selectoptions);      
+ });
+    </pre>
+
+			<h3>
+				With Empty Option
+			</h3>
+			<pre>
+    var options = {emptyOption: true};
+    $('#first').doubleSelect('second', selectoptions, options);      
+    </pre>
+
+			<h3>
+				With Pre Select and Customized Empty Option
+			</h3>
+			<pre>
+    var options = {
+                    preselectFirst : 10, 
+                    preselectSecond : 112, 
+                    emptyOption: true, 
+                    emptyValue: '...', 
+                    emptyKey: 'nothing'
+                   };
+                   
+    $('#first').doubleSelect('second', selectoptions, options);      
+    </pre>
+
+			<p>
+				Have fun with this plugin.
+			</p>
+
+			<p>
+				Please report bugs
+				<a href="http://www.jgeppert.com/kontakt/">here</a>
+			</p>
+
+			<p id="footer">
+				<a href="http://www.jgeppert.com/">Java, J2EE and Web
+					Programming</a>
+			</p>
+		</div>
+	</body>
+</html>
+
