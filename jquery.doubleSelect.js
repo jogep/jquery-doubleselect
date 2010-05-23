@@ -66,9 +66,15 @@
                         });
                         $.each(v.values,
                         function(k, v2) {
-                            var o = $("<option>").html(k).attr('value', v2);
-                            if (k === bestk) { o.html(k).attr("selected", "selected"); }
-                            o.appendTo($second);
+                          var o = $("<option>").html(k).attr('value', v2);
+                          if (options.preselectSecond) {
+                            $.each(options.preselectSecond,
+                              function(index, selected) {
+                                if (v2 == selected) o.html(k).attr("selected", "selected");
+                              }
+                            );
+                          }
+                          o.appendTo($second);
                         });
                     }
                 });
