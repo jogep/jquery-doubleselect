@@ -41,7 +41,7 @@
 
         var setValue = function(value) {
             $second.val(value).change();
-        }
+        };
 
         var removeValues = function() {
             $($secondid + " option").remove();
@@ -57,17 +57,17 @@
                     if ($current == v.key) {
                         $.each(v.values,
                         function(k, v2) {
-                            if (!bestk && (v.defaultvalue != null && v2 == v.defaultvalue)) {
+                            if (!bestk && (v.defaultvalue !== null && v2 == v.defaultvalue)) {
                                 bestk = k;
                             }
-                            if (options.preselectSecond != null && v2 == options.preselectSecond) {
+                            if (options.preselectSecond !== null && v2 == options.preselectSecond) {
                                 bestk = k;
                             }
                         });
                         $.each(v.values,
                         function(k, v2) {
                             var o = $("<option>").html(k).attr('value', v2);
-                            if (k === bestk) o.html(k).attr("selected", "selected");
+                            if (k === bestk) { o.html(k).attr("selected", "selected"); }
                             o.appendTo($second);
                         });
                     }
@@ -90,14 +90,14 @@
             $.each(values,
             function(k, v) {
                 var of = $("<option>").html(k).attr('value', v.key);
-                if (options.preselectFirst != null && v.key == options.preselectFirst) {
+                if (options.preselectFirst !== null && v.key == options.preselectFirst) {
                     of.html(k).attr("selected", "selected");
                 }
                 of.appendTo($first);
 
             });
 
-            if (options.preselectFirst == null) {
+            if (options.preselectFirst === null) {
                 $current = this.options[this.selectedIndex].value;
                 if ($current != '') {
                     $.each(values,
@@ -106,17 +106,17 @@
                         if ($current == v.key) {
                             $.each(v.values,
                             function(k, v2) {
-                                if (!bestk && (v.defaultvalue != null && v2 == v.defaultvalue)) {
+                                if (!bestk && (v.defaultvalue !== null && v2 == v.defaultvalue)) {
                                     bestk = k;
                                 }
-                                if (options.preselectSecond != null && v2 == options.preselectSecond) {
+                                if (options.preselectSecond !== null && v2 == options.preselectSecond) {
                                     bestk = k;
                                 }
                             });
                             $.each(v.values,
                             function(k, v2) {
                                 var o = $("<option>").html(k).attr('value', v2);
-                                if (k === bestk) o.html(k).attr("selected", "selected");
+                                if (k === bestk) { o.html(k).attr("selected", "selected"); }
                                 o.appendTo($second);
                             });
 
