@@ -1,6 +1,6 @@
 /*
  * jQuery doubleSelect Plugin
- * version: 1.2
+ * version: 1.3
  * @requires jQuery v1.3.2 or later
  *
  * Dual licensed under the MIT and GPL licenses:
