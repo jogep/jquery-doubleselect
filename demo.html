@@ -12,7 +12,15 @@
 		<script type="text/JavaScript">
  $(document).ready(function()
  {
-	    var selectoptions = {
+    var options = {
+                    preselectFirst : 20,
+                    preselectSecond : 213,
+                    emptyOption: true,
+                    emptyValue: '...',
+                    emptyKey: 'nothing'
+                   };
+
+    var selectoptions = {
     		"Vegetables": {
     	         "key" : 10,
                  "defaultvalue" : 111,
@@ -34,7 +42,7 @@
               }
     };
 
-	    $('#first').doubleSelect('second', selectoptions);      
+	    $('#first').doubleSelect('second', selectoptions, options);
  });
         </script>
 	</head>
@@ -58,7 +66,7 @@
 			<h2>
 				Example :
 			</h2>
-			<form action="index.html"> 
+			<form action="index.html">
 				<fieldset>
 					<legend>
 						DoubleSelect Demo
@@ -104,7 +112,7 @@
                      }
               }
     };
-    $('#first').doubleSelect('second', selectoptions);      
+    $('#first').doubleSelect('second', selectoptions);
  });
     </pre>
 
@@ -113,7 +121,7 @@
 			</h3>
 			<pre>
     var options = {emptyOption: true};
-    $('#first').doubleSelect('second', selectoptions, options);      
+    $('#first').doubleSelect('second', selectoptions, options);
     </pre>
 
 			<h3>
@@ -121,14 +129,14 @@
 			</h3>
 			<pre>
     var options = {
-                    preselectFirst : 10, 
-                    preselectSecond : 112, 
-                    emptyOption: true, 
-                    emptyValue: '...', 
+                    preselectFirst : 10,
+                    preselectSecond : 112,
+                    emptyOption: true,
+                    emptyValue: '...',
                     emptyKey: 'nothing'
                    };
-                   
-    $('#first').doubleSelect('second', selectoptions, options);      
+
+    $('#first').doubleSelect('second', selectoptions, options);
     </pre>
 
 			<p>
