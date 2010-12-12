@@ -12,9 +12,11 @@
  *  7/23/2009 - J. Hinds change to two pass method to locate element for 'selected' attribute
  */
 
+/*global jQuery  */
+
 /**
  * Converts passed JSON options into <select> elements.
- * 
+ *
  * @param String
  *            id of the second select box
  * @param String
@@ -49,8 +51,8 @@
 
         $(this).change(function() {
             removeValues();
-            $current = this.options[this.selectedIndex].value;
-            if ($current != '') {
+            var $current = this.options[this.selectedIndex].value;
+            if ($current !== '') {
                 $.each(values,
                 function(k, v) {
                     var bestk;
@@ -70,7 +72,9 @@
                           if (options.preselectSecond) {
                             $.each(options.preselectSecond,
                               function(index, selected) {
-                                if (v2 == selected) o.html(k).attr("selected", "selected");
+                                if (v2 == selected) {
+									o.html(k).attr("selected", "selected");
+                                }
                               }
                             );
                           }
@@ -97,15 +101,15 @@
             function(k, v) {
                 var of = $("<option>").html(k).attr('value', v.key);
                 if (options.preselectFirst !== null && v.key == options.preselectFirst) {
-                    of.html(k).attr("selected", "selected");
+					of.html(k).attr("selected", "selected");
                 }
                 of.appendTo($first);
 
             });
 
             if (options.preselectFirst === null) {
-                $current = this.options[this.selectedIndex].value;
-                if ($current != '') {
+                var $current = this.options[this.selectedIndex].value;
+                if ($current !== '') {
                     $.each(values,
                     function(k, v) {
                         var bestk;
