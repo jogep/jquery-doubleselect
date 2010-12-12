@@ -1,15 +1,15 @@
 /*
  * jQuery doubleSelect Plugin
- * version: 1.3
+ * @version 1.3
  * @requires jQuery v1.3.2 or later
+ * @author  Johannes Geppert <post at jgeppert dot com> http://www.jgeppert.com
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  *
- * @version $Id: jquery.doubleSelect.js 3 2009-04-24 12:00:00Z $
- * @author  Johannes Geppert <post at jgeppert dot com> http://www.jgeppert.com
- *  7/23/2009 - J. Hinds change to two pass method to locate element for 'selected' attribute
+ *
+ * 7/23/2009 - J. Hinds change to two pass method to locate element for 'selected' attribute
  */
 
 /*global jQuery  */
