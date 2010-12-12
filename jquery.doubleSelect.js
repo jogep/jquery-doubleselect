@@ -45,11 +45,13 @@
             $second.val(value).change();
         };
 
+        /** Helper Function to remove childs from second */
         var removeValues = function() {
             $($secondid + " option").remove();
         };
 
-        $(this).change(function() {
+        /** OnChange Handler */
+		$(this).change(function() {
             removeValues();
             var $current = this.options[this.selectedIndex].value;
             if ($current !== '') {
@@ -78,7 +80,8 @@
                               }
                             );
                           }
-                          o.appendTo($second);
+                          if (k === bestk) { o.html(k).attr("selected", "selected"); }
+						  o.appendTo($second);
                         });
                     }
                 });
@@ -89,14 +92,18 @@
         });
 
         return this.each(function() {
+
+        	//remove all current items in select boxes
             $first.children().remove();
             $second.children().remove();
 
+            // Handle the empty option param
             if (options.emptyOption) {
                 var oe = $("<option>").html(options.emptyValue).attr('value', options.emptyKey);
                 oe.appendTo($first);
             }
 
+            // add all options to first select box
             $.each(values,
             function(k, v) {
                 var of = $("<option>").html(k).attr('value', v.key);
