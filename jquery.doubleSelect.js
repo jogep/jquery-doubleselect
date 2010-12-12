@@ -1,6 +1,6 @@
-/*
+/*!
  * jQuery doubleSelect Plugin
- * @version 1.3
+ * @version 1.3.1
  * @requires jQuery v1.3.2 or later
  * @author  Johannes Geppert <post at jgeppert dot com> http://www.jgeppert.com
  *
